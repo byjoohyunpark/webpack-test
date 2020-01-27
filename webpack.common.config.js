@@ -1,19 +1,8 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const path = require('path');
 
 module.exports = {
-    // mode: 'production',
     entry: './src/index.js',
-    output: {
-        path: path.resolve(__dirname, './dist'),
-        filename: 'main.[contentHash].js'
-    },
-    devServer: { // development mode: reads file from dist folder
-        contentBase: './dist',
-    },
     plugins: [
-        new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
             template: "./src/index.html"
         })
@@ -22,12 +11,7 @@ module.exports = {
         rules: [
             {
                 test: /\.html$/,
-                use: [
-                    {
-                        loader: "html-loader",
-                        // options: { minimize: true }
-                    }
-                ]
+                use: ["html-loader"]
             },
             {
                 test: /\.s[ac]ss$/,
