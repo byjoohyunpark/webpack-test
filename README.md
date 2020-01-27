@@ -1,2 +1,1 @@
-# webpack-test
-Repo for testing out Webpack and it's configuration.
+Let's play with webpack yay!
