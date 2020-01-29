@@ -14,8 +14,5 @@ document.querySelector('#app').appendChild(component());
 
 console.log('init index.js');
 
-
-One();
-Two();
-
-
+document.querySelector('#app').appendChild(One);
+document.querySelector('#app').appendChild(Two);
