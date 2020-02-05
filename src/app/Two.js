@@ -1,6 +1,6 @@
-const Two = document.createElement('p');
-Two.innerHTML = 'Two';
+const Two = document.createElement('p')
+Two.innerHTML = 'Two'
 
-export { Two };
+export { Two }
 
-console.log('init Two');
+console.log('init Two')
