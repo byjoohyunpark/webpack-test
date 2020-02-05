@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack --config webpack.config.js",
     "dev": "webpack-dev-server --open",
-    "format": "prettier --write \"src/**/*.js\""
+    "format": "eslint --fix ./src"
   },
   "keywords": [],
   "author": "",
