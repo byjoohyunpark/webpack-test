@@ -1,8 +1,1 @@
-Let's play with webpack yay!
-
-#### Setup
-``` 
-npm install
-npm run dev
-npm run build
-```
+Let's play with webpack yay! (+ linting and formatting setup w/ eslint, prettier)
