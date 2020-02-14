@@ -51,6 +51,16 @@ let list = {
   }
 }
 
+// const createList = num => {
+//   let list = {}
+//   for (let i = 0; i < num; i++) {
+//     list.value = i
+//   }
+//   return list
+// }
+
+// console.log(createList(20))
+
 list = list.next
 
 console.log(list)
