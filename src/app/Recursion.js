@@ -35,21 +35,14 @@ const compute_salary = target => {
   }
 }
 
-console.log(compute_salary(company))
+console.log('computed salary: ', compute_salary(company))
 
 const createList = num => {
   let list = {}
   for (let i = 0; i < num; i++) {
-    if (i === 0) {
-      list[i] = {
-        value: num - i,
-        next: null
-      }
-    } else {
-      list[i] = {
-        value: num - i,
-        next: list[i - 1]
-      }
+    list[i] = {
+      value: num - i,
+      next: i === 0 ? null : list[i - 1]
     }
   }
   return list[num - 1]
@@ -59,6 +52,10 @@ let list = createList(4)
 
 list = list.next
 
-console.log(list)
+console.log('modified list: ', list)
 
-export {}
+const factorial = n => {
+  return n === 1 ? n : n * factorial(n - 1)
+}
+
+console.log('factorial: ', factorial(5))
