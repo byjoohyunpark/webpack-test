@@ -37,29 +37,25 @@ const compute_salary = target => {
 
 console.log(compute_salary(company))
 
-let list = {
-  value: 1,
-  next: {
-    value: 2,
-    next: {
-      value: 3,
-      next: {
-        value: 4,
+const createList = num => {
+  let list = {}
+  for (let i = 0; i < num; i++) {
+    if (i === 0) {
+      list[i] = {
+        value: num - i,
         next: null
+      }
+    } else {
+      list[i] = {
+        value: num - i,
+        next: list[i - 1]
       }
     }
   }
+  return list[num - 1]
 }
 
-// const createList = num => {
-//   let list = {}
-//   for (let i = 0; i < num; i++) {
-//     list.value = i
-//   }
-//   return list
-// }
-
-// console.log(createList(20))
+let list = createList(4)
 
 list = list.next
 
