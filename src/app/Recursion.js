@@ -1,16 +1,21 @@
+/* recursion and stack */
+
 let company = {
   // the same object, compressed for brevity
   tech: {
     sales: [
       { name: 'John', salary: 1000 },
-      { name: 'Alice', salary: 600 }
+      { name: 'Alice', salary: 1000 }
     ],
     development: {
       sites: [
-        { name: 'Peter', salary: 2000 },
-        { name: 'Alex', salary: 1800 }
+        { name: 'Peter', salary: 1000 },
+        { name: 'Alex', salary: 1000 }
       ],
-      internals: [{ name: 'Jack', salary: 1300 }]
+      internals: {
+        HR: [{ name: 'Jack', salary: 1000 }],
+        creative: [{ name: 'Kay', salary: 1000 }]
+      }
     }
   }
 }
