@@ -59,3 +59,14 @@ const factorial = n => {
 }
 
 console.log('factorial: ', factorial(5))
+
+const printList = list => {
+  if (list.next === null) {
+    console.log(list.value, list.next, ' done')
+  } else {
+    console.log(list.value)
+    printList(list.next)
+  }
+}
+
+printList(list)
