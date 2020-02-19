@@ -1,8 +1,14 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path')
 
 // common
 const config = {
   entry: './src/index.js',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    filename: 'main.[hash:20].js'
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
@@ -44,7 +50,8 @@ module.exports = env => {
 
   // production
   if (env.production) {
-    //...
+    config.plugins.push(new CleanWebpackPlugin())
+    // config.module.rules.
   }
 
   return config
