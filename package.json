@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "webpack --config webpack.prod.js",
-    "dev": "webpack-dev-server --config webpack.dev.js --open --watch",
+    "dev": "webpack-dev-server --env.development --config webpack.dev.js --open --watch",
     "format": "eslint --fix ./src"
   },
   "keywords": [],

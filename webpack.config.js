@@ -1,30 +1,6 @@
-// const merge = require('webpack-merge')
-// const common = require('./webpack.common.js')
-
-// module.exports = merge(common, {
-//   mode: 'development',
-//   devtool: 'eval-source-map',
-//   module: {
-//     rules: [
-//       {
-//         test: /\.(png|jpe?g|gif|svg)$/i,
-//         use: [
-//           {
-//             loader: 'file-loader',
-//             options: {
-//               name: 'img/[name].[ext]',
-//               esModule: false,
-//               limit: 8192
-//             }
-//           }
-//         ]
-//       }
-//     ]
-//   }
-// })
-
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
+// common
 const config = {
   entry: './src/index.js',
   plugins: [
@@ -60,10 +36,13 @@ const config = {
 }
 
 module.exports = env => {
+  // development
   if (env.development) {
-    config.devtool = 'source-map'
+    config.mode = 'developmebnt'
+    config.devtool = 'eval-source-map'
   }
 
+  // production
   if (env.production) {
     //...
   }
