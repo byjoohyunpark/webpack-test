@@ -7,8 +7,13 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: 'main.[hash:20].js'
+    filename: '[name].bundle.[hash:20].js'
   },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all'
+  //   }
+  // },
   plugins: [new CleanWebpackPlugin()],
   module: {
     rules: [
