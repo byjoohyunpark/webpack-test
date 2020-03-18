@@ -7,7 +7,7 @@ module.exports = merge(common, {
   mode: 'production',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.[hash:20].js'
+    filename: '[name].bundle.[contenthash:20].js'
   },
   // optimization: {
   //   splitChunks: {
@@ -23,7 +23,7 @@ module.exports = merge(common, {
           {
             loader: 'file-loader',
             options: {
-              name: 'img/[name].[hash:20].[ext]',
+              name: 'img/[name].[contenthash:20].[ext]',
               esModule: false,
               limit: 8192
             }
