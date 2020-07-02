@@ -26,12 +26,12 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: 'index.html',
-      chunks: ['index']
+      filename: 'index.html'
     }),
     new HtmlWebpackPlugin({
       template: './src/index2.html',
-      filename: 'index2.html'
+      filename: 'index2.html',
+      chunks: ['index2']
     })
   ],
   module: {
