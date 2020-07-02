@@ -7,8 +7,7 @@ module.exports = {
   mode: 'production',
   entry: {
     index: './src/index.js',
-    test: './src/test/index.js',
-    test2: './src/test/index2.js'
+    index2: './src/index2.js'
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -31,14 +30,9 @@ module.exports = {
       chunks: ['index']
     }),
     new HtmlWebpackPlugin({
-      template: './src/test/test.html',
-      filename: 'test.html',
-      chunks: ['test']
-    }),
-    new HtmlWebpackPlugin({
-      template: './src/test/test2.html',
-      filename: 'test2.html',
-      chunks: ['test2']
+      template: './src/index2.html',
+      filename: 'index2.html',
+      chunks: ['index', 'index2']
     })
   ],
   module: {

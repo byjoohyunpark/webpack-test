@@ -1,6 +1,8 @@
-const Paragraph = document.createElement('p')
-Paragraph.innerHTML = 'Paragraph'
+import _ from 'lodash'
 
-console.log('init Paragraph')
+const Paragraph = document.createElement('p')
+Paragraph.innerHTML = 'Paragraph 1'
+
+console.log(_.join(['paragraph 1', 'module', 'loaded!'], ' '))
 
 export default Paragraph
