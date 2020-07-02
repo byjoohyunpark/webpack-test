@@ -13,11 +13,11 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.[contenthash:20].js'
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all'
-    }
-  },
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all'
+  //   }
+  // },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
