@@ -26,7 +26,8 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      chunks: ['index']
     }),
     new HtmlWebpackPlugin({
       template: './src/index2.html',

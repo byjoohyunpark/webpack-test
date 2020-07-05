@@ -1,14 +1,7 @@
 import './style/main.scss'
-import Paragraph from './app/Paragraph'
-import Paragraph2 from './app/Paragraph2'
+import './app/Message'
+import './app/Paragraph'
+import './app/Paragraph2'
 
-function component() {
-  const element = document.createElement('div')
-  element.innerHTML = 'Hello webpack!'
-  return element
-}
-
-document.querySelector('#app').appendChild(component())
-
-document.querySelector('#app').appendChild(Paragraph)
-document.querySelector('#app').appendChild(Paragraph2)
+import * as THREE from 'three'
+import * as d3 from 'd3'
