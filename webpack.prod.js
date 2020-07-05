@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+// const TerserPlugin = require('terser-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+
 const path = require('path')
 
 module.exports = {
@@ -13,12 +16,12 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.[contenthash:20].js'
   },
-  // optimization: {
-  //  usedExports: true,
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   }
-  // },
+  optimization: {
+    usedExports: true,
+    sideEffects: true,
+    minimize: false,
+    minimizer: [new UglifyJsPlugin()]
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
