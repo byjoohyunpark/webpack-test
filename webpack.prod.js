@@ -14,6 +14,7 @@ module.exports = {
     filename: '[name].bundle.[contenthash:20].js'
   },
   // optimization: {
+  //  usedExports: true,
   //   splitChunks: {
   //     chunks: 'all'
   //   }
