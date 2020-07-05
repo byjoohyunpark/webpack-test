@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "sideEffects": false,
   "scripts": {
-    "dev": "webpack-dev-server --config webpack.dev.js --open --watch",
     "build": "webpack --config webpack.prod.js",
-    "preview": "yarn build && http-server dist -o",
-    "format": "eslint --fix ./src"
+    "dev": "webpack-dev-server --config webpack.dev.js --open --watch",
+    "format": "eslint --fix ./src",
+    "preview": "npm run build && http-server dist -o"
   },
   "keywords": [],
   "author": "",
