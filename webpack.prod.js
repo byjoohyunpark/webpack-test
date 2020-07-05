@@ -1,7 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
 const path = require('path')
 
 module.exports = {
@@ -15,7 +14,9 @@ module.exports = {
     filename: '[name].bundle.[contenthash:20].js'
   },
   // optimization: {
-  //   usedExports: true
+  //   splitChunks: {
+  //     chunks: 'all'
+  //   }
   // },
   plugins: [
     new CleanWebpackPlugin(),
