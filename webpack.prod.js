@@ -5,6 +5,11 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
+  // optimization: {
+  //   splitChunks: {
+  //     chunks: 'all'
+  //   }
+  // },
   entry: {
     index: './src/index.js',
     index2: './src/index2.js'
@@ -13,11 +18,6 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.[contenthash:20].js'
   },
-  // optimization: {
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   }
-  // },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
