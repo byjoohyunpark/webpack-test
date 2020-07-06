@@ -13,12 +13,6 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.[contenthash:20].js'
   },
-  // optimization: {
-  //  usedExports: true,
-  //   splitChunks: {
-  //     chunks: 'all'
-  //   }
-  // },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -63,8 +57,7 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: 'img/[name].[contenthash:20].[ext]',
-              esModule: false,
-              limit: 8192
+              esModule: false
             }
           }
         ]
