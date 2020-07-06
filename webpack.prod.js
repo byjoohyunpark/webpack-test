@@ -1,8 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-// const TerserPlugin = require('terser-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
 
 const path = require('path')
 
@@ -16,12 +18,11 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.[contenthash:20].js'
   },
-  optimization: {
-    usedExports: true,
-    sideEffects: true,
-    minimize: false,
-    minimizer: [new UglifyJsPlugin()]
-  },
+  // optimization: {
+  //   usedExports: true,
+  //   minimize: false,
+  //   minimizer: [new TerserPlugin()]
+  // },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -38,6 +39,7 @@ module.exports = {
       filename: 'index2.html',
       chunks: ['index2']
     })
+    // new BundleAnalyzerPlugin()
   ],
   module: {
     rules: [
@@ -51,7 +53,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: [['@babel/preset-env', { modules: false }]]
           }
         }
       },
