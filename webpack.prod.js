@@ -1,10 +1,10 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const TerserPlugin = require('terser-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
+const TerserPlugin = require('terser-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 
 const path = require('path')
 
@@ -18,11 +18,11 @@ module.exports = {
     path: path.resolve(__dirname, './dist'),
     filename: '[name].bundle.[contenthash:20].js'
   },
-  // optimization: {
-  //   usedExports: true,
-  //   minimize: false,
-  //   minimizer: [new TerserPlugin()]
-  // },
+  optimization: {
+    usedExports: true
+    // minimize: false,
+    // minimizer: [new TerserPlugin()]
+  },
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
@@ -38,8 +38,12 @@ module.exports = {
       template: './src/index2.html',
       filename: 'index2.html',
       chunks: ['index2']
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      reportFilename: 'analyze.html'
     })
-    // new BundleAnalyzerPlugin()
   ],
   module: {
     rules: [

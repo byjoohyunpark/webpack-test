@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "private": true,
-  "sideEffects": [
-    "**/*.css",
-    "**/*.scss"
-  ],
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "dev": "webpack-dev-server --config webpack.dev.js --open --watch",
@@ -45,6 +41,7 @@
   "dependencies": {
     "d3": "^5.16.0",
     "loadash": "^1.0.0",
-    "three": "^0.118.3"
+    "three": "^0.118.3",
+    "tone": "^13.8.25"
   }
 }
