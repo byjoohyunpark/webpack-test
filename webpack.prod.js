@@ -14,14 +14,15 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.[contenthash:20].js'
+    filename: '[name].bundle.[chunkhash].js',
+    chunkFilename: '[name].bundle.[chunkhash].js'
   },
   optimization: {
     splitChunks: {
+      // chunks: 'all',
       cacheGroups: {
         vendor: {
-          name: 'node_vendors', // part of the bundle name and
-          // can be used in chunks array of HtmlWebpackPlugin
+          name: 'node_vendors',
           test: /[\\/]node_modules[\\/]/,
           chunks: 'all'
         }
@@ -45,8 +46,9 @@ module.exports = {
       chunks: ['index2']
     }),
     new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
       openAnalyzer: false,
-      statsFilename: 'analyze'
+      reportFilename: 'analyze.html'
     })
   ],
   module: {
