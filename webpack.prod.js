@@ -19,14 +19,14 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      // chunks: 'all',
-      cacheGroups: {
-        vendor: {
-          name: 'node_vendors',
-          test: /[\\/]node_modules[\\/]/,
-          chunks: 'all'
-        }
-      }
+      chunks: 'all'
+      // cacheGroups: {
+      //   vendor: {
+      //     name: 'node_vendors',
+      //     test: /[\\/]node_modules[\\/]/,
+      //     chunks: 'all'
+      //   }
+      // }
     }
   },
   plugins: [
