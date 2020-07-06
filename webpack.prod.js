@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
+
 const path = require('path')
 
 module.exports = {
@@ -40,6 +43,10 @@ module.exports = {
       template: './src/index2.html',
       filename: 'index2.html',
       chunks: ['index2']
+    }),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false,
+      statsFilename: 'analyze'
     })
   ],
   module: {
