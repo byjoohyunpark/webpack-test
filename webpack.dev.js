@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    port: 8000
+    port: 8080
   },
   entry: {
     index: './src/index.js',
@@ -53,7 +53,8 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'img/[name].[ext]',
+              name: '[name].[ext]',
+              outputPath: 'img',
               esModule: false
             }
           }
