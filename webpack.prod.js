@@ -14,8 +14,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.[chunkhash].js',
-    chunkFilename: '[name].bundle.[chunkhash].js'
+    filename: '[name].bundle.[contenthash].js',
+    chunkFilename: '[name].bundle.[contenthash].js'
   },
   optimization: {
     splitChunks: {
@@ -77,7 +77,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'img/[name].[contenthash:20].[ext]',
+              name: 'img/[name].[contenthash].[ext]',
               esModule: false
             }
           }
