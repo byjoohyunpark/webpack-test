@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    port: 8000
+    port: 8080
   },
   entry: {
     index: './src/index.js',
