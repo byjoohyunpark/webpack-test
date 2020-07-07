@@ -8,7 +8,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
 const path = require('path')
 
 module.exports = {
-  mode: 'development',
+  mode: 'none',
   entry: {
     index: './src/index.js',
     index2: './src/index2.js'
@@ -18,6 +18,7 @@ module.exports = {
     filename: '[name].bundle.[contenthash:20].js'
   },
   optimization: {
+    providedExports: true,
     usedExports: true
     // minimize: false,
     // minimizer: [new TerserPlugin()]
