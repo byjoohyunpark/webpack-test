@@ -19,7 +19,7 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
-      chunks: 'all'
+      // chunks: 'all'
       // cacheGroups: {
       //   vendor: {
       //     name: 'node_vendors',
