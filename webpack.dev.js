@@ -5,7 +5,7 @@ module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, './dist')
+    port: 8000
   },
   entry: {
     index: './src/index.js',
