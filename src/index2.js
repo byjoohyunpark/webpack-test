@@ -1,12 +1,12 @@
-import './style/main.scss'
-import './app/Message'
-import './app/Paragraph'
-import './app/Paragraph2'
+// import './style/main.scss'
+// import './app/Message'
+// import './app/Paragraph'
+// import './app/Paragraph2'
 
-import { add } from './js/utils'
+import { add, subtract, multiply } from './js/utils'
 // import * as THREE from 'three'
 // import * as d3 from 'd3'
 
-// console.log(add(1, 2))
-
-// console.log(Sampler)
+add(1, 2)
+subtract(1, 2)
+multiply(1, 2)

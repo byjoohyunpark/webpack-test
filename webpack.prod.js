@@ -3,12 +3,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
   .BundleAnalyzerPlugin
-// const TerserPlugin = require('terser-webpack-plugin')
 
 const path = require('path')
 
 module.exports = {
-  mode: 'none',
+  mode: 'production',
   entry: {
     index: './src/index.js',
     index2: './src/index2.js'
@@ -18,10 +17,7 @@ module.exports = {
     filename: '[name].bundle.[contenthash].js'
   },
   optimization: {
-    providedExports: true,
     usedExports: true
-    // minimize: false,
-    // minimizer: [new TerserPlugin()]
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -72,7 +68,8 @@ module.exports = {
             loader: 'file-loader',
             options: {
               name: '[name].[contenthash].[ext]',
-              outputPath: 'img'
+              outputPath: 'img',
+              esModule: false
             }
           }
         ]

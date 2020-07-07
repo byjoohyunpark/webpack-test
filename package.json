@@ -4,7 +4,9 @@
   "description": "",
   "private": true,
   "sideEffects": [
-    "*.css"
+    "**/*.css",
+    "**/*.scss",
+    "**/app/*"
   ],
   "scripts": {
     "build": "webpack --config webpack.prod.js",
