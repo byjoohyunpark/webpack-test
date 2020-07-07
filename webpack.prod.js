@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: '[name].bundle.[contenthash:20].js'
+    filename: '[name].bundle.[contenthash].js'
   },
   optimization: {
     providedExports: true,
@@ -26,8 +26,8 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].[contenthash:20].css',
-      chunkFilename: '[id].[contenthash:20].css'
+      filename: 'css/[name].[contenthash].css',
+      chunkFilename: '[id].[contenthash].css'
     }),
     new HtmlWebpackPlugin({
       template: './src/index.html',
@@ -71,7 +71,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              name: 'img/[name].[contenthash:20].[ext]',
+              name: 'img/[name].[contenthash].[ext]',
               esModule: false
             }
           }
