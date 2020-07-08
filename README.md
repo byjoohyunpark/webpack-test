@@ -1,1 +1,1 @@
-Let's play with webpack yay! (+ linting and formatting setup w/ eslint, prettier)
+Test repo for concepts, configuration, optimization using webpack. (+ eslint-prettier setup)
