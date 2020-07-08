@@ -8,4 +8,4 @@ import { add, subtract, multiply } from './js/utils'
 // import extent from 'd3-array/src/extent'
 // import histogram from 'd3-array/src/histogram'
 // import mean from 'd3-array/src/mean'
-// console.log(extent(), histogram(), mean())
+// console.log(extent, histogram, mean)
