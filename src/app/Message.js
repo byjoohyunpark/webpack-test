@@ -4,4 +4,6 @@ function component() {
   return element
 }
 
+console.log('message loaded!')
+
 document.querySelector('#app').appendChild(component())
