@@ -1,6 +1,9 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer')
+  .BundleAnalyzerPlugin
+
 const path = require('path')
 
 module.exports = {
@@ -28,6 +31,11 @@ module.exports = {
       template: './src/index2.html',
       filename: 'index2.html',
       chunks: ['index2']
+    }),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      reportFilename: 'analyze.html'
     })
   ],
   module: {
@@ -42,7 +50,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
+            presets: [['@babel/preset-env', { modules: false }]]
           }
         }
       },
