@@ -17,6 +17,7 @@ module.exports = {
     filename: '[name].bundle.[contenthash].js'
   },
   optimization: {
+    providedExports: true,
     usedExports: true
   },
   plugins: [
