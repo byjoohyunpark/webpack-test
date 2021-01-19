@@ -8,6 +8,10 @@ const path = require('path')
 
 module.exports = {
   mode: 'production',
+  performance: {
+    hints: 'warning',
+    maxAssetSize: 200000
+  },
   entry: {
     index: './src/index.js',
     index2: './src/index2.js'
